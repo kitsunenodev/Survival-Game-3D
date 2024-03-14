@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fde9a0b3d3c37548a91dd739158ecc7, type: 3}
+  m_Name: MediKit
+  m_EditorClassIdentifier: 
+  itemName: Medical Kit
+  itemDescription: This medical kit contains everything needed to heal most of the
+    wounds and illnesses
+  itemVisual: {fileID: 21300000, guid: 140fa2920e3aef34fbaa2ed8dffec49d, type: 3}
+  itemPrefab: {fileID: 1812453638202030619, guid: c6776ea35b3d59b46907ebd401b343ff, type: 3}
+  stackable: 1
+  maxStack: 10
+  healthRegen: 100
+  hungerRegen: 10
+  thirstRegen: 10
+  itemType: 2
+  equipmentType: 0

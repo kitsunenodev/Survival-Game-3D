@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fde9a0b3d3c37548a91dd739158ecc7, type: 3}
+  m_Name: BasicPants
+  m_EditorClassIdentifier: 
+  itemName: Basic Pants
+  itemDescription: Basic pants to cover and warm your legs
+  itemVisual: {fileID: 21300000, guid: dff4124e641058b4589e05274e744e74, type: 3}
+  itemPrefab: {fileID: 5453446709813290221, guid: 2fea09ed437c85244935b20dbd68d16d, type: 3}
+  stackable: 0
+  maxStack: 0
+  healthRegen: 0
+  hungerRegen: 0
+  thirstRegen: 0
+  itemType: 1
+  equipmentType: 3
+  armorPoints: 10
