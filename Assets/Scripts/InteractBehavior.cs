@@ -63,6 +63,7 @@ public class InteractBehavior : MonoBehaviour
          return;
       }
 
+      transform.rotation = Quaternion.LookRotation(item.transform.position);
       isBusy = true;
       currentItem = item;
       playerAnimator.SetTrigger("PickUp");
@@ -74,16 +75,18 @@ public class InteractBehavior : MonoBehaviour
       {
          return;
       }
+      
+      transform.rotation = Quaternion.LookRotation(harvestable.transform.position);
       isBusy = true;
       currentHarvestable = harvestable;
       currentTool = currentHarvestable.tool;
-      EnableToolGameobject(currentTool);
+      EnableToolGameobject();
       playerAnimator.SetTrigger("Harvest");
       moveBehavior.canMove = false;
       
    }
 
-   private void EnableToolGameobject(Tool toolType, bool enabled = true)
+   private void EnableToolGameobject(bool enabled = true)
    { 
       EquipmentLibraryItem equipmentLibraryItem = equipmentLibrary.itemToPrefab.Where(
          elem => elem.itemData == equipment.weaponItem).FirstOrDefault();
@@ -149,7 +152,7 @@ public class InteractBehavior : MonoBehaviour
    public void ReEnablePlayerMovement()
    {
       isBusy = false;
-      EnableToolGameobject(currentTool, false);
+      EnableToolGameobject(false);
       moveBehavior.canMove = true;
    }
 

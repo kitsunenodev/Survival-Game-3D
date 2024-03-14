@@ -1,10 +1,11 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class Interact : MonoBehaviour
 {
     [SerializeField]
     private float interactRange;
+
+    public Transform interactPoint;
 
     public InteractBehavior playerInteractBehavior;
 
@@ -13,23 +14,23 @@ public class Interact : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        RaycastHit hit;
-        
-        if (Physics.Raycast(transform.position, transform.forward, out hit, interactRange, layerMask))
+        Collider[] Colliders = Physics.OverlapCapsule(transform.position,
+            interactPoint.position, interactRange, layerMask);
+        if (Colliders.Length > 0)
         {
             interactText.SetActive(true);
             
             if (Input.GetKeyDown(KeyCode.E))
             {
-                if (hit.transform.CompareTag("Item"))
+                if (Colliders[0].transform.CompareTag("Item"))
                 {
                     
-                    playerInteractBehavior.DoPickUpItem(hit.transform.gameObject.GetComponent<Item>());
+                    playerInteractBehavior.DoPickUpItem(Colliders[0].transform.gameObject.GetComponent<Item>());
                 }
                 
-                if (hit.transform.CompareTag("Harvestable"))
+                if (Colliders[0].transform.CompareTag("Harvestable"))
                 {
-                    playerInteractBehavior.DoHarvest(hit.transform.gameObject.GetComponent<Harvestable>());
+                    playerInteractBehavior.DoHarvest(Colliders[0].transform.gameObject.GetComponent<Harvestable>());
                 }
                 
             }
