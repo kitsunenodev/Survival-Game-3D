@@ -14088,6 +14088,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bear
       objectReference: {fileID: 0}
+    - target: {fileID: 7490366586498994196, guid: 855f184d0a25d4142a1c7846725c7585, type: 3}
+      propertyPath: m_TagString
+      value: AI
+      objectReference: {fileID: 0}
     - target: {fileID: 7834275525115382446, guid: 855f184d0a25d4142a1c7846725c7585, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -14942,6 +14946,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   availableRecipes:
   - {fileID: 11400000, guid: cf4b88f2570c1c94bb35cf310252ae84, type: 2}
+  - {fileID: 11400000, guid: 1c4d0e6c5c2f5d447acd60785f44c01d, type: 2}
   recipeUIPrefab: {fileID: 1555017103141418829, guid: 58d8924f7bf18674a96e28e5a50b9ebb, type: 3}
   recipesParent: {fileID: 1005139308}
   craftingPanelKey: 99

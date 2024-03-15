@@ -10,9 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 543096a4eb75b8846895f98e684984c2, type: 3}
-  m_Name: Iron Helmet Recipe
+  m_Name: Basic Sword
   m_EditorClassIdentifier: 
-  itemCrafted: {fileID: 11400000, guid: 9e6871ad4eabd9b4a8b1396f8d6b0114, type: 2}
+  itemCrafted: {fileID: 11400000, guid: 01351e87dfbfe23499bb704621594cc7, type: 2}
   requiredItems:
   - itemData: {fileID: 11400000, guid: 40f59d6cf63566247bff0582426974e1, type: 2}
+    count: 3
+  - itemData: {fileID: 11400000, guid: 150902b7d7684244293f49acac283797, type: 2}
     count: 2
