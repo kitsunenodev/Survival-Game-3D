@@ -97,7 +97,6 @@ public class EnemyAI : MonoBehaviour
                     {
                         agent.SetDestination(player.position);
                     }
-                    
                 }
             }
         }
@@ -154,7 +153,7 @@ public class EnemyAI : MonoBehaviour
             return;
         }
 
-        currentHealth -= damage;
+        currentHealth -= damageAmount;
 
         if (currentHealth <= 0)
         {

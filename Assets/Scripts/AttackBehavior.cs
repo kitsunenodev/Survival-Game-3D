@@ -28,7 +28,7 @@ public class AttackBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.DrawRay(transform.position + attackOffset, transform.forward * attackRange, Color.red);
+        Debug.DrawRay(transform.position + attackOffset, transform.forward * attackRange, Color.blue);
         if (Input.GetMouseButtonDown(0) && CanAttack())
         {
             Attack();
@@ -44,7 +44,6 @@ public class AttackBehavior : MonoBehaviour
         {
             if (hit.transform.CompareTag("AI"))
             {
-                Debug.Log("hit");
                 EnemyAI enemyAI = hit.transform.GetComponent<EnemyAI>();
                 enemyAI.TakeDamage(equipment.weaponItem.damage);
             }
