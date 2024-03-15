@@ -55,7 +55,6 @@ public class AttackBehavior : MonoBehaviour
     private bool CanAttack()
     {
         return !isAttacking && equipment.weaponItem != null && !uiManager.panelOpen && !interactBehavior.isBusy;
-        Debug.Log(isAttacking);
     }
 
     public void EndAttack()

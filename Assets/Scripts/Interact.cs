@@ -32,7 +32,6 @@ public class Interact : MonoBehaviour
                 {
                     playerInteractBehavior.DoHarvest(Colliders[0].transform.gameObject.GetComponent<Harvestable>());
                 }
-                
             }
             
            

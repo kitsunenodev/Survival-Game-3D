@@ -63,7 +63,7 @@ public class InteractBehavior : MonoBehaviour
          return;
       }
 
-      transform.rotation = Quaternion.LookRotation(item.transform.position);
+      StartCoroutine(RotateTowardObject(item.transform));
       isBusy = true;
       currentItem = item;
       playerAnimator.SetTrigger("PickUp");
@@ -75,8 +75,8 @@ public class InteractBehavior : MonoBehaviour
       {
          return;
       }
-      
-      transform.rotation = Quaternion.LookRotation(harvestable.transform.position);
+
+      StartCoroutine(RotateTowardObject(harvestable.transform));
       isBusy = true;
       currentHarvestable = harvestable;
       currentTool = currentHarvestable.tool;
@@ -159,6 +159,18 @@ public class InteractBehavior : MonoBehaviour
    void PlayHarvestingSoundEffect()
    {
       audioSource.Play();
+   }
+
+   public IEnumerator RotateTowardObject(Transform target)
+   {
+      Transform currentTransform = transform;
+      Quaternion targetRotation = Quaternion.LookRotation(
+         target.position- currentTransform.position, currentTransform.up);
+      for (float i = 0; i <= 1; i+= 0.01f)
+      {
+         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, i);
+         yield return new WaitForSeconds(0.005f);
+      }
    }
 
   
