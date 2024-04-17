@@ -29,6 +29,10 @@ public class MainMenu : MonoBehaviour
 
     [SerializeField]
     private GameObject settingsPanel;
+    
+    [SerializeField]
+    private GameObject controlsPanel;
+    
 
     [SerializeField]
     private Toggle fullScreenToggle;
@@ -131,6 +135,13 @@ public class MainMenu : MonoBehaviour
     public void EnableDisableSettingsPanel()
     {
         settingsPanel.SetActive(!settingsPanel.activeSelf);
+        controlsPanel.SetActive(false);
+    }
+    
+    public void EnableDisableControlsPanel()
+    {
+        controlsPanel.SetActive(!controlsPanel.activeSelf);
+        settingsPanel.SetActive(false);
     }
 
     public void BackToTitle()
@@ -138,6 +149,8 @@ public class MainMenu : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene("MainMenuScene");
     }
+    
+    
 
     
 }

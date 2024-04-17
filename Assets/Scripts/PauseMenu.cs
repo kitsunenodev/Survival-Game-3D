@@ -13,7 +13,12 @@ public class PauseMenu : MonoBehaviour
     private GameObject settingsMenu;
 
     [SerializeField]
+    private GameObject controlsMenu;
+    
+    [SerializeField]
     private ThirdPersonOrbitCamBasic cameraScript;
+
+    
 
     // Update is called once per frame
     void Update()
@@ -23,6 +28,7 @@ public class PauseMenu : MonoBehaviour
             menuOpened = !menuOpened;
             pauseMenu.SetActive(menuOpened);
             settingsMenu.SetActive(false);
+            controlsMenu.SetActive(false);
 
             Time.timeScale = menuOpened ? 0 : 1;
 
